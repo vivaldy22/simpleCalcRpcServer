@@ -15,7 +15,7 @@ func main() {
 	}
 	s := calc.Server{}
 	grpcServer := grpc.NewServer()
-	api.RegisterAdditionServer(grpcServer, &s)
+	api.RegisterCalcServer(grpcServer, &s)
 	log.Println("Server runs")
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %s", err)
